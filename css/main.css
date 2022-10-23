@@ -1,0 +1,261 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ddd;
+    font-weight: 600;
+    color: #111;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    margin: 170px auto 0;
+    padding: 40px 0;
+    width: 85%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    background-color: #000;
+    color: #ddd;
+    z-index: 99;
+}
+
+.header-container {
+    margin: 0 auto;
+    width: 85%;
+}
+
+.telegram-link {
+    display: flex;
+    justify-content: center;
+}
+
+.main-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: center;
+}
+
+.section, .warning {
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 10px;
+}
+
+.section:not(:last-child),
+.warning:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.section .title {
+    display: flex;
+}
+
+.section .title__icon {
+    margin-right: 10px;
+    width: 30px;
+}
+
+.steps {
+    margin-left: 40px;
+    color: rgba(0,0,0,.6);
+}
+
+.step:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.warning {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-color: #000;
+}
+
+.warning__img {
+    margin-right: 30px;
+}
+
+.warning__descr {
+    color: rgba(0,0,0,.6);
+    line-height: 1.5;
+}
+
+.warning .steps {
+    margin-left: 0;
+}
+
+.progress {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress__line {
+    height: 5px;
+    width: 40%;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+.progress__line-filler {
+    width: 0;
+    background-color: blue;
+    height: 5px;
+    transition: width 0.7s;
+}
+
+.progress__number {
+    margin-bottom: 5px;
+}
+
+.todo {
+
+}
+
+.todo__item {
+
+}
+
+.todo__item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.todo__checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.todo__checkbox + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+.todo__checkbox + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+}
+
+.todo__checkbox:hover + label:before {
+    background: #f35429;
+}
+
+.todo__checkbox:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+.todo__checkbox:checked + label:before {
+    background: #f35429;
+}
+
+.todo__checkbox:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+}
+
+.todo__checkbox:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+}
+
+.todo__checkbox:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow:
+           2px 0 0 white,
+           4px 0 0 white,
+           4px -2px 0 white,
+           4px -4px 0 white,
+           4px -6px 0 white,
+           4px -8px 0 white;
+    transform: rotate(45deg);
+}
+
+.map {
+    margin-top: 40px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 20px 0;
+        width: 90%;
+    }
+
+    .header-container {
+        width: 90%;
+    }
+
+    .step:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .warning {
+        flex-direction: column;
+    }
+    
+    .warning .title {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .progress__line {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section .title {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section, .warning {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .title {
+        font-size: 18px;
+    }
+
+    .step,
+    .warning__descr {
+        font-size: 14px;
+    }
+}
